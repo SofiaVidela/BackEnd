@@ -1,0 +1,40 @@
+.row{
+    padding: 20px;
+}
+div{
+    background-color: #a3af9c;
+}
+/*Nombre*/
+#nombre{
+    font-weight: bold;
+    margin-top: 25px;
+}
+/*Foto de Perfil*/
+
+@media(min-width:576px){
+    #contFoto{
+        position: relative;
+        height: 200px;
+    }
+    #fotoDePerfil{
+        width: 90%;
+        position: absolute;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px #49562a ;
+        top: -100px;
+    }
+}
+@media(max-width:575px){
+    #contFoto{
+        position: relative;
+        height: 50px;
+    }
+    #fotoDePerfil{
+        width: 20%;
+        position: absolute;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px #49562a ;
+        top: -200%;
+        left: 40%;
+    }
+}
