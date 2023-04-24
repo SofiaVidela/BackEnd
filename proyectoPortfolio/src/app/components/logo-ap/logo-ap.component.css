@@ -1,7 +1,17 @@
 #logoAP{
     width: 150px;
 }
-img{
-    width: 40px;
-    margin: 5px;
+
+svg{
+    color: white;
+}
+.sv-tipo2{
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-size: 0.7em;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

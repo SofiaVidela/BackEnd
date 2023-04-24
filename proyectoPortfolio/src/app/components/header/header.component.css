@@ -1,8 +1,17 @@
-div{
-    background-color:#a3af9c;
+#logoAP{
+    width: 100px;
 }
-app-social{
-    float: right;
-    margin-top: 25px;
-    margin-right: 15px;
+
+svg{
+    color: white;
+}
+.sv-tipo2{
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-size: 0.7em;
+}
+.sv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

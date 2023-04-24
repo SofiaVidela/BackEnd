@@ -1,0 +1,22 @@
+
+.sv{
+    padding: 20px;
+    height: 100px;
+    background-color: #a3af9c;
+}
+.sv-hr {
+    
+    border: 1px solid white;
+}
+svg{
+    color: white;
+}
+.sv-tipo2{
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-size: 0.7em;
+}
+.sv-casipie { 
+    background-color:#a3af9c; 
+    height: 30vh;
+}
