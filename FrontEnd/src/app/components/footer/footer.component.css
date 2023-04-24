@@ -1,0 +1,23 @@
+
+.sv-hr {
+    
+    border: 1px solid white;
+}
+svg{
+    color: white;
+}
+.sv-tipo2{
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-size: 0.7em;
+}
+.sv{
+    width: 100%;
+    height: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #a3af9c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
