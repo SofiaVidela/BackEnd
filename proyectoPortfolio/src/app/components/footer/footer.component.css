@@ -1,9 +1,4 @@
 
-.sv{
-    padding: 20px;
-    height: 100px;
-    background-color: #a3af9c;
-}
 .sv-hr {
     
     border: 1px solid white;
@@ -16,7 +11,13 @@ svg{
     color: white;
     font-size: 0.7em;
 }
-.sv-casipie { 
-    background-color:#a3af9c; 
-    height: 30vh;
+.sv{
+    width: 100%;
+    height: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #a3af9c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
