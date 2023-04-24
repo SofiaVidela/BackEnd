@@ -20,7 +20,7 @@ div{
         width: 90%;
         position: absolute;
         border-radius: 100%;
-        box-shadow: 3px 3px 3px #49562a ;
+        box-shadow: 3px 3px 10px #49562a ;
         top: -100px;
     }
 }
@@ -33,7 +33,7 @@ div{
         width: 20%;
         position: absolute;
         border-radius: 100%;
-        box-shadow: 3px 3px 3px #49562a ;
+        box-shadow: 3px 3px 10px #49562a ;
         top: -200%;
         left: 40%;
     }
