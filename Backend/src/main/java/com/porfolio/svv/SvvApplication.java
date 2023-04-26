@@ -1,4 +1,4 @@
-package com.portfolio.svv;
+package com.porfolio.svv;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

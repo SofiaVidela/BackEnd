@@ -1,4 +1,4 @@
-package com.portfolio.svv;
+package com.porfolio.svv;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
