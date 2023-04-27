@@ -11,6 +11,7 @@ import { EducacionComponent } from './components/educacion/educacion.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 /*Graficos circulares*/
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
@@ -29,6 +30,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     /*Graficos Circulares*/
     NgCircleProgressModule.forRoot({})
   ],
