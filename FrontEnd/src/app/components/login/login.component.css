@@ -1,0 +1,25 @@
+#backgound{
+    background-color: #AFC073;
+    display: flex;
+    height: 700px;
+    align-content: center;
+    justify-content: space-around;
+
+}
+#caja{
+    background-color: #A3AF9C;
+    border-radius: 50px;
+    box-shadow: 3px 3px 20px #49562a ;
+    text-align: center;
+    padding: 20px;
+    width: fit-content;
+}
+#form{
+    display: grid;
+    justify-content: space-around;
+}
+.linktext{
+    text-decoration: none;
+    color: #49562a;
+    font-size: 0.8em;
+}

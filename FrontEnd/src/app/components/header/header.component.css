@@ -1,4 +1,5 @@
 #logoAP{
+    padding-left: 5%;
     width: 100px;
 }
 
@@ -14,4 +15,10 @@ svg{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.social{
+    padding-right: 5%;
+}
+ul{
+    margin-bottom: 0;
 }

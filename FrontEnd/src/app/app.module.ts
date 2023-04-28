@@ -14,6 +14,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 /*Graficos circulares*/
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,10 +28,14 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     EducacionComponent,
     SkillsComponent,
     ProyectosComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     /*Graficos Circulares*/
