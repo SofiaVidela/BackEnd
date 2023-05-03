@@ -17,6 +17,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { interceptorProvider } from './service/interceptor-service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     /*Graficos Circulares*/
     NgCircleProgressModule.forRoot({})
   ],
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

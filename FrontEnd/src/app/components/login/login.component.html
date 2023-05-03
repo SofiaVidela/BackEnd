@@ -4,44 +4,27 @@
             <h3 class="h3">Iniciar sesión para editar el portfolio</h3>
         </div>
         <div>
-            <form [formGroup]="form" id="form" action="" class="" (ngSubmit)="onEnviar($event)">
+            <form  #f="ngForm" id="form" action="" class="" (ngSubmit)="onLogin()">
                 <div class="row">
                     <div class="form-group col-auto mx-auto p-2">
-                        <label for="InputEmail" class="form-label sv-tipo1">Email</label>
-                        <input formControlName="mail" type="email" name="email" id="InputEmail" placeholder="@"
-                            class="form-control sv-tipo2" [class.is-invalid]="MailValid">
+                        <label for="nombreUsuario" class="form-label sv-tipo1">Nombre de Usuario (Email)</label>
+                        <input type="email" name="nombreUsuario" id="nombreUsuario" placeholder="@"
+                            class="form-control sv-tipo2"  [(ngModel)]="nombreUsuario" required >
 
-                        <!-- Gracias al getter que configuramos en el controlador -->
-                        <div *ngIf="Mail?.errors && Mail?.touched">
-                            <p *ngIf="Mail?.hasError('required')" class="error">El mail es requerido</p>
-                            <p *ngIf="Mail?.hasError('email')" class="error">El formado del mail debe ser inválido</p>
-                        </div>
                     </div>
                     <div class="form-group col-auto mx-auto p-2">
-                        <label for="InputPassword" class="form-label sv-tipo1">Contraseña</label>
-                        <input formControlName="password" type="password" name="password" id="InputPassword"
+                        <label for="password" class="form-label sv-tipo1">Contraseña</label>
+                        <input type="password" name="password" id="password"
                             placeholder="De 8 a 20 caracteres" class="form-control sv-tipo2"
-                            [class.is-invalid]="PasswordValid">
-
-                        <!-- Gracias al getter que configuramos en el controlador -->
-                        <div *ngIf="Password?.errors && Password?.touched">
-                            <p *ngIf="Password?.hasError('required')" class="error">La contraseña es requerida</p>
-                            <p *ngIf="Password?.hasError('minlength')" class="error">Debe tener entre 8 y 20 caracteres
-                            </p>
-                            <p *ngIf="Password?.hasError('maxlength')" class="error">Debe tener entre 8 y 20 caracteres
-                            </p>
-                        </div>
+                            [(ngModel)]="password" required>
                     </div>
                 </div>
                 <div class="form-group m-3">
- 
-                        <button type="submit" class="btn btn-outline-dark sv-tipo1"
-                            [class.disabled]="MailValid || PasswordValid">Enviar</button>
-
+                        <button type="submit" class="btn btn-outline-dark sv-tipo1">Enviar</button>
                 </div>
                 <div class="">
                     <h6><a class="linktext" href='' target="_blank" rel="noopener noreferrer" >volver al perfil</a></h6>
-                    <h6><a class="linktext" href="" target="_blank" rel="noopener noreferrer" [class.disabled]="MailValid">Recuperar contraseña</a></h6>
+                    <h6><a class="linktext" href="" target="_blank" rel="noopener noreferrer">Recuperar contraseña</a></h6>
                 </div>
 
             </form>
