@@ -6,6 +6,9 @@
 svg{
     color: white;
 }
+button>svg{
+    color: #b47474;
+}
 .sv-tipo2{
     font-family: 'Raleway', sans-serif;
     color: white;
