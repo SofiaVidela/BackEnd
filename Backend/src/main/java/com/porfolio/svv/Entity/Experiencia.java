@@ -16,16 +16,15 @@ public class Experiencia {
     //Primary Key+Autogenerado
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     
     //Variables obligatorias
     @NotNull
     @Size (min =1, max = 50, message = "no cumple con la logitud" )
     private String nombreE;
     @NotNull
-    @Size (min =1, max = 50, message = "no cumple con la logitud" )
+    @Size (min =1, max = 250, message = "no cumple con la logitud" )
     private String descripcionE;
-    
     @NotNull
     @Size (min =1, max = 50, message = "no cumple con la logitud" )
     private String fechaE;
@@ -34,17 +33,17 @@ public class Experiencia {
     public Experiencia(){
     }
 
-    public Experiencia(String nombreE, String descripcionE, String fecha) {
+    public Experiencia(String nombreE, String descripcionE, String fechaE) {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
         this.fechaE = fechaE;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
