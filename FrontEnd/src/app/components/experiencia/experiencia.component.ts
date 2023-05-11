@@ -20,6 +20,7 @@ export class ExperienciaComponent implements OnInit {
     private activateRouter: ActivatedRoute,
     private router: Router) { }
   //variablesNuevas
+  
   nombreE: string = '';
   descripcionE: string = '';
   fechaE: string = '';

@@ -8,3 +8,6 @@
 .accordion-button{
     background-color: #afc073;
 }
+.botones{
+    display: flex;
+    justify-content: flex-end;}
