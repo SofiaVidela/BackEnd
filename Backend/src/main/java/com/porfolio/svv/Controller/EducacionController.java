@@ -52,7 +52,7 @@ public class EducacionController {
         }
         educacionService.delete(id);
 
-        return new ResponseEntity(new Mensaje("Experiencia eliminada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Educacion eliminada"), HttpStatus.OK);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
@@ -62,13 +62,13 @@ public class EducacionController {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
         if (educacionService.existsByNombreEdu(dtoEdu.getNombreEdu())) {
-            return new ResponseEntity(new Mensaje("Esa experiencia existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Esa educación existe"), HttpStatus.BAD_REQUEST);
         }
 
-        Educacion educacion = new Educacion(dtoEdu.getNombreEdu(), dtoEdu.getDescripcionEdu(), dtoEdu.getFechaEdu());
+        Educacion educacion = new Educacion(dtoEdu.getNombreEdu(), dtoEdu.getDescripcionEdu(), dtoEdu.getFechaEdu(), dtoEdu.getLinkCertificado());
         educacionService.save(educacion);
 
-        return new ResponseEntity(new Mensaje("Experiencia agregada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Educacion agregada"), HttpStatus.OK);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
@@ -80,7 +80,7 @@ public class EducacionController {
         }
         //Comparacion de nombres de experiencia
         if (educacionService.existsByNombreEdu(dtoEdu.getNombreEdu()) && educacionService.getByNombreEdu(dtoEdu.getNombreEdu()).get().getId() != id) {
-            return new ResponseEntity(new Mensaje("Esa experincia ya existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Esa educacion ya existe"), HttpStatus.BAD_REQUEST);
         }
         if (StringUtils.isBlank(dtoEdu.getNombreEdu())) {
             return new ResponseEntity(new Mensaje("el nombre es obligatorio"), HttpStatus.BAD_REQUEST);
@@ -90,6 +90,7 @@ public class EducacionController {
         educacion.setNombreEdu(dtoEdu.getNombreEdu());
         educacion.setDescripcionEdu(dtoEdu.getDescripcionEdu());
         educacion.setFechaEdu(dtoEdu.getFechaEdu());
+        educacion.setLinkCertificado(dtoEdu.getLinkCertificado());
 
         educacionService.save(educacion);
         return new ResponseEntity(new Mensaje("Educacion actualizada"), HttpStatus.OK);

@@ -16,7 +16,7 @@ public class Persona {
     //Primary Key+Autogenerado
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     
     //Variables obligatorias
     @NotNull
@@ -25,8 +25,25 @@ public class Persona {
     @NotNull
     @Size (min =1, max = 50, message = "no cumple con la logitud" )
     private String apellido;
-    
-    //Variable no obligatoria
-    @Size (min =1, max = 75, message = "no cumple con la logitud" )
+    @NotNull
+    private String descripcionDM;
+    @NotNull
+    private String subtitulo;
+    //Variables no obligatorias
+    private String descripcionHS;
+    private String descripcionSS;
     private String img;
+
+    public Persona() {
+    }
+
+    public Persona(String nombre, String apellido, String descripcionDM,String subtitulo, String descripcionHS, String descripcionSS, String img) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.descripcionDM = descripcionDM;
+        this.subtitulo = subtitulo;
+        this.descripcionHS = descripcionHS;
+        this.descripcionSS = descripcionSS;
+        this.img = img;
+    }   
 }

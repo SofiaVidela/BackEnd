@@ -2,8 +2,10 @@
 package com.porfolio.svv.Dto;
 
 import javax.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.Setter;
 
-
+@Getter @Setter
 public class dtoEducacion {
     @NotBlank
     private String nombreEdu;
@@ -11,39 +13,16 @@ public class dtoEducacion {
     private String descripcionEdu;
     @NotBlank
     private String fechaEdu;
+    private String linkCertificado;
 
     public dtoEducacion() {
     }
 
-    public dtoEducacion(String nombreEdu, String descripcionEdu, String fechaEdu) {
+    public dtoEducacion(String nombreEdu, String descripcionEdu, String fechaEdu, String linkCertificado) {
         this.nombreEdu = nombreEdu;
         this.descripcionEdu = descripcionEdu;
         this.fechaEdu = fechaEdu;
+        this.linkCertificado= linkCertificado;
     }
-
-    public String getNombreEdu() {
-        return nombreEdu;
-    }
-
-    public void setNombreEdu(String nombreEdu) {
-        this.nombreEdu = nombreEdu;
-    }
-
-    public String getDescripcionEdu() {
-        return descripcionEdu;
-    }
-
-    public void setDescripcionEdu(String descripcionEdu) {
-        this.descripcionEdu = descripcionEdu;
-    }
-
-    public String getFechaEdu() {
-        return fechaEdu;
-    }
-
-    public void setFechaEdu(String fechaEdu) {
-        this.fechaEdu = fechaEdu;
-    }
-    
     
 }
