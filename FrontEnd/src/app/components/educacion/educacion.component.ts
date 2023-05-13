@@ -75,10 +75,10 @@ export class EducacionComponent implements OnInit {
       data => {
         this.cargarEducacion();
         this.isEdit = false;
-        alert("Experiencia editada");
+        alert("Educación editada");
       },
       err => {
-        alert("No se pudo editar la experiencia");
+        alert("No se pudo editar la educación");
         this.isEdit = false;
       }
     );
