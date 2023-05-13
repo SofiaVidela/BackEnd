@@ -24,8 +24,7 @@ export class AcercaDeComponent implements OnInit {
     }
   }
   cargarPersona(){
-    this.personaService.detail(1).subscribe(data=>
-      {this.Persona = data})
+    this.personaService.detail(1).subscribe(data=>{this.Persona = data})
   }
 
   editar(): void {

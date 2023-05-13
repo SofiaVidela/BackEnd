@@ -16,11 +16,9 @@ export class ExperienciaComponent implements OnInit {
   expe: Experiencia = null;
 
   constructor(private experienciaServ: ExperienciaService,
-    private tokenService: TokenService,
-    private activateRouter: ActivatedRoute,
-    private router: Router) { }
-  //variablesNuevas
-  
+    private tokenService: TokenService) { }
+
+  //variablesNuevas 
   nombreE: string = '';
   descripcionE: string = '';
   fechaE: string = '';

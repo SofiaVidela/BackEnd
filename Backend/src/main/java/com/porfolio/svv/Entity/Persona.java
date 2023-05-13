@@ -30,20 +30,20 @@ public class Persona {
     @NotNull
     private String subtitulo;
     //Variables no obligatorias
-    private String descripcionHS;
-    private String descripcionSS;
+    private String descriPcionHS;
+    private String descriPcionSS;
     private String img;
 
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, String descripcionDM,String subtitulo, String descripcionHS, String descripcionSS, String img) {
+    public Persona(String nombre, String apellido, String descripcionDM,String subtitulo, String descriPcionHS, String descriPcionSS, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.descripcionDM = descripcionDM;
         this.subtitulo = subtitulo;
-        this.descripcionHS = descripcionHS;
-        this.descripcionSS = descripcionSS;
+        this.descriPcionHS = descriPcionHS;
+        this.descriPcionSS = descriPcionSS;
         this.img = img;
     }   
 }

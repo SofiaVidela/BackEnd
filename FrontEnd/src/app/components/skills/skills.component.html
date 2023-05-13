@@ -1,124 +1,135 @@
 <div class="row contSkills container-fluid">
     <h1>Habilidades</h1>
-    <div class="col-11 card mx-auto my-3">
-        <div class="card-body">
-            <h5 class="card-title">Front End</h5>
-            <p class="card-text">Como programadora Front End, me puedo encargar de el código orientado a la inmersión de los usuarios en el sitio.
-                Al trabajar en el ámbito visual tengo conocimeintos de diseño, soy creativa y cuento con manejo de herramientas de usabilidad y experiencia de usuario que me permiten crear interfaces funcionales para cada proyecto.
-            </p>
-            <hr>
-            <div class="row ">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">
-                    <circle-progress [percent]="90" [radius]="90" [title]="'HTML5'" [showTitle]="true"
-                        [showUnits]="false" [titleFontSize]="'2em'" [outerStrokeWidth]="16" [innerStrokeWidth]="16"
-                        [space]="-16" [outerStrokeColor]="'#0a6a77'" [innerStrokeColor]="'#e1e6c6'" [animation]="true"
-                        [animationDuration]="900"></circle-progress>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">
-                    <circle-progress [percent]="95" [radius]="90" [title]="'CCS'" [showTitle]="true"
-                        [showUnits]="false" [titleFontSize]="'2em'" [outerStrokeWidth]="16" [innerStrokeWidth]="16"
-                        [space]="-16" [outerStrokeColor]="'#0a6a77'" [innerStrokeColor]="'#e1e6c6'" [animation]="true"
-                        [animationDuration]="900"></circle-progress>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">
-                    <circle-progress [percent]="70" [radius]="90" [title]="'JS'" [showTitle]="true"
-                        [showUnits]="false" [titleFontSize]="'2em'" [outerStrokeWidth]="16" [innerStrokeWidth]="16"
-                        [space]="-16" [outerStrokeColor]="'#0a6a77'" [innerStrokeColor]="'#e1e6c6'" [animation]="true"
-                        [animationDuration]="900"></circle-progress>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">
-                    <circle-progress [percent]="50" [radius]="90" [title]="'TS'" [showTitle]="true"
-                        [showUnits]="false" [titleFontSize]="'2em'" [outerStrokeWidth]="16" [innerStrokeWidth]="16"
-                        [space]="-16" [outerStrokeColor]="'#0a6a77'" [innerStrokeColor]="'#e1e6c6'" [animation]="true"
-                        [animationDuration]="900"></circle-progress>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">
-                    <circle-progress [percent]="75" [radius]="90" [title]="'Angular'" [showTitle]="true"
-                        [showUnits]="false" [titleFontSize]="'2em'" [outerStrokeWidth]="16" [innerStrokeWidth]="16"
-                        [space]="-16" [outerStrokeColor]="'#0a6a77'" [innerStrokeColor]="'#e1e6c6'" [animation]="true"
-                        [animationDuration]="900"></circle-progress>
-                </div>
+    <!-- Boton y formulario de Edicion-->
+    <div class="row col-11 mx-auto">
+        <button *ngIf="isLogged" class="btn btn-outline-dark m-1 col-11" (click)="editarDescriP()" type="button"
+            data-bs-toggle="collapse" data-bs-target="#DescriPciones" aria-expanded="false"
+            aria-controls="DescriPciones">Editar Descripciones de Habilidades
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
+                viewBox="0 0 16 16">
+                <path
+                    d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+            </svg></button>
+    </div>
+    <div class="collapse collapse-horizontal col-11 mx-auto" id="DescriPciones">
+        <div class="row" *ngIf="isLogged">
+            <div class="col-12">
+                <form (ngSubmit)="onUpdateIP()" novalidate #f="ngForm" class="row">
+                    <div class="form-group">
+                        <label for="descriPcionHS">Descripcion de Habilidades Duras</label>
+                        <textarea type="text" class="form-control" id="descriPcionHS" name="descriPcionHS"
+                            [(ngModel)]="Persona.descriPcionHS" value="{{Persona.descriPcionHS}}" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="descriPcionSS">Descripcion de Habilidades Blandas</label>
+                        <textarea type="text" class="form-control" id="descriPcionSS" name="descriPcionSS"
+                            [(ngModel)]="Persona.descriPcionSS" value="{{Persona.descriPcionSS}}" required></textarea>
+                    </div>
+                    <div class="col-auto mx-auto p-3"><button type="submit"
+                            class="btn btn-outline-dark btn-sm">Confirmar
+                            Cambios</button></div>
+                </form>
             </div>
         </div>
     </div>
+    <!-- Habilidades Duras-->
     <div class="col-11 card mx-auto my-3">
         <div class="card-body">
-            <h5 class="card-title">Front End</h5>
-            <p class="card-text">Como programadora Front End, me puedo encargar de el código orientado a la inmersión de los usuarios en el sitio.
-                Al trabajar en el ámbito visual tengo conocimeintos de diseño, soy creativa y cuento son manejo de herramientas de usabilidad y experiencia de usuario que me permiten crear interfaces funcionales para cada proyecto.
-            </p>
+            <h5 class="card-title">Habilidades Duras</h5>
+            <p class="card-text">{{Persona.descriPcionHS}}</p>
             <hr>
-            <div class="row ">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">
-                    <circle-progress [percent]="90" [radius]="90" [title]="'HTML5'" [showTitle]="true"
-                        [showUnits]="false" [titleFontSize]="'2em'" [outerStrokeWidth]="16" [innerStrokeWidth]="16"
-                        [space]="-16" [outerStrokeColor]="'#0a6a77'" [innerStrokeColor]="'#e1e6c6'" [animation]="true"
-                        [animationDuration]="900"></circle-progress>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">
-                    <circle-progress [percent]="95" [radius]="90" [title]="'CCS'" [showTitle]="true"
-                        [showUnits]="false" [titleFontSize]="'2em'" [outerStrokeWidth]="16" [innerStrokeWidth]="16"
-                        [space]="-16" [outerStrokeColor]="'#0a6a77'" [innerStrokeColor]="'#e1e6c6'" [animation]="true"
-                        [animationDuration]="900"></circle-progress>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">
-                    <circle-progress [percent]="70" [radius]="90" [title]="'JS'" [showTitle]="true"
-                        [showUnits]="false" [titleFontSize]="'2em'" [outerStrokeWidth]="16" [innerStrokeWidth]="16"
-                        [space]="-16" [outerStrokeColor]="'#0a6a77'" [innerStrokeColor]="'#e1e6c6'" [animation]="true"
-                        [animationDuration]="900"></circle-progress>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">
-                    <circle-progress [percent]="50" [radius]="90" [title]="'TS'" [showTitle]="true"
-                        [showUnits]="false" [titleFontSize]="'2em'" [outerStrokeWidth]="16" [innerStrokeWidth]="16"
-                        [space]="-16" [outerStrokeColor]="'#0a6a77'" [innerStrokeColor]="'#e1e6c6'" [animation]="true"
-                        [animationDuration]="900"></circle-progress>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">
-                    <circle-progress [percent]="75" [radius]="90" [title]="'Angular'" [showTitle]="true"
-                        [showUnits]="false" [titleFontSize]="'2em'" [outerStrokeWidth]="16" [innerStrokeWidth]="16"
-                        [space]="-16" [outerStrokeColor]="'#0a6a77'" [innerStrokeColor]="'#e1e6c6'" [animation]="true"
-                        [animationDuration]="900"></circle-progress>
-                </div>
-            </div>
+            <h5 class="card-title">Habilidades Blandas</h5>
+            <p class="card-text">
+                {{Persona.descriPcionSS}}
+            </p>
         </div>
     </div>
+    <!-- Graficos-->
     <div class="col-11 card mx-auto my-3">
         <div class="card-body">
-            <h5 class="card-title">Front End</h5>
-            <p class="card-text">Como programadora Front End, me puedo encargar de el código orientado a la inmersión de los usuarios en el sitio.
-                Al trabajar en el ámbito visual tengo conocimeintos de diseño, soy creativa y cuento son manejo de herramientas de usabilidad y experiencia de usuario que me permiten crear interfaces funcionales para cada proyecto.
-            </p>
+            <h5 class="card-title">Porcentajes de Habilidades</h5>
+            <!-- Boton y formulario de Edicion-->
+            <div class="row col-11 mx-auto">
+                <button *ngIf="isLogged" class="btn btn-outline-dark m-1 col-11" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#HabilidadesDuras" aria-expanded="false" aria-controls="HabilidadesDuras">Agregar o
+                    Editar Habilidades
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-pencil" viewBox="0 0 16 16">
+                        <path
+                            d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                    </svg></button>
+            </div>
+            <div class="collapse collapse-horizontal col-11 mx-auto" id="HabilidadesDuras">
+                <div class="row" *ngIf="isLogged && !isEditHS">
+                    <div class="col-12">
+                        <form (ngSubmit)="onCreateHS()" novalidate #f="ngForm" class="row">
+
+                            <div class="form-group col-6">
+                                <label for="nombreHS">Nombre de Habilidad Dura</label>
+                                <input type="text" class="form-control" id="nombreHS" name="nombreHS"
+                                    [(ngModel)]="nombreHS" required>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="porcentajeHS">Porcentaje de Conocimiento</label>
+                                <input type="text" class="form-control" id="porcentajeHS" name="porcentajeHS"
+                                    [(ngModel)]="porcentajeHS" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcionHS">Descripcion de la Habilidad</label>
+                                <textarea type="text" class="form-control" id="descripcionHS" name="descripcionHS"
+                                    [(ngModel)]="descripcionHS" required></textarea>
+                            </div>
+                            <div class="col-auto mx-auto p-3"><button type="submit"
+                                    class="btn btn-outline-dark btn-sm">Crear</button></div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row" *ngIf="isLogged && isEditHS">
+                    <div class="col-12">
+                        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="row">
+                            <div class="form-group col-6">
+                                <label for="nombreHS">Nombre de Habilidad Dura</label>
+                                <input type="text" class="form-control" id="nombreHS" name="nombreHS"
+                                    [(ngModel)]="hardSkill.nombreHS" value="{{hardSkill.nombreHS}}" required>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="porcentajeHS">Porcentaje de Conocimiento</label>
+                                <input type="text" class="form-control" id="porcentajeHS" name="porcentajeHS"
+                                    [(ngModel)]="hardSkill.porcentajeHS" value="{{hardSkill.porcentajeHS}}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcionHS">Descripcion de la Habilidad</label>
+                                <textarea type="text" class="form-control" id="descripcionHS" name="descripcionHS"
+                                    [(ngModel)]="hardSkill.descripcionHS" value="{{hardSkill.descripcionHS}}" required></textarea>
+                            </div>
+                            <div class="col-auto mx-auto p-3"><button type="submit"
+                                    class="btn btn-outline-dark btn-sm">Modificar</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>            
             <hr>
             <div class="row ">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">
-                    <circle-progress [percent]="90" [radius]="90" [title]="'HTML5'" [showTitle]="true"
-                        [showUnits]="false" [titleFontSize]="'2em'" [outerStrokeWidth]="16" [innerStrokeWidth]="16"
-                        [space]="-16" [outerStrokeColor]="'#0a6a77'" [innerStrokeColor]="'#e1e6c6'" [animation]="true"
-                        [animationDuration]="900"></circle-progress>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">
-                    <circle-progress [percent]="95" [radius]="90" [title]="'CCS'" [showTitle]="true"
-                        [showUnits]="false" [titleFontSize]="'2em'" [outerStrokeWidth]="16" [innerStrokeWidth]="16"
-                        [space]="-16" [outerStrokeColor]="'#0a6a77'" [innerStrokeColor]="'#e1e6c6'" [animation]="true"
-                        [animationDuration]="900"></circle-progress>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">
-                    <circle-progress [percent]="70" [radius]="90" [title]="'JS'" [showTitle]="true"
-                        [showUnits]="false" [titleFontSize]="'2em'" [outerStrokeWidth]="16" [innerStrokeWidth]="16"
-                        [space]="-16" [outerStrokeColor]="'#0a6a77'" [innerStrokeColor]="'#e1e6c6'" [animation]="true"
-                        [animationDuration]="900"></circle-progress>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">
-                    <circle-progress [percent]="50" [radius]="90" [title]="'TS'" [showTitle]="true"
-                        [showUnits]="false" [titleFontSize]="'2em'" [outerStrokeWidth]="16" [innerStrokeWidth]="16"
-                        [space]="-16" [outerStrokeColor]="'#0a6a77'" [innerStrokeColor]="'#e1e6c6'" [animation]="true"
-                        [animationDuration]="900"></circle-progress>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">
-                    <circle-progress [percent]="75" [radius]="90" [title]="'Angular'" [showTitle]="true"
-                        [showUnits]="false" [titleFontSize]="'2em'" [outerStrokeWidth]="16" [innerStrokeWidth]="16"
-                        [space]="-16" [outerStrokeColor]="'#0a6a77'" [innerStrokeColor]="'#e1e6c6'" [animation]="true"
-                        [animationDuration]="900"></circle-progress>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center" *ngFor="let hSArray of hSArray">
+                    <circle-progress [percent]="(hSArray.porcentajeHS)" [radius]="90" [title]="hSArray.nombreHS"
+                        [showTitle]="true" [showUnits]="false" [titleFontSize]="'1em'" [outerStrokeWidth]="16"
+                        [innerStrokeWidth]="16" [space]="-16" [outerStrokeColor]="'#0a6a77'"
+                        [innerStrokeColor]="'#e1e6c6'" [animation]="true" [animationDuration]="900"></circle-progress>
+                        <div class="botones">
+                            <button *ngIf="isLogged" class="btn btn-danger btn-sm m-2"
+                             (click)="deleteHS(hSArray.id)">Borrar
+                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
+                               viewBox="0 0 16 16">
+                               <path
+                                 d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
+                               <path
+                                 d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
+                             </svg></button>
+                           <button *ngIf="isLogged" class="btn btn-outline-dark btn-sm m-2" (click)="editarHS(hSArray.id)">Editar
+                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                               <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                             </svg></button>
+                         </div>
                 </div>
             </div>
         </div>

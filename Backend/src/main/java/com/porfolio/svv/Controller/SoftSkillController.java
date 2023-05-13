@@ -52,7 +52,7 @@ public class SoftSkillController {
         }
         sSService.delete(id);
 
-        return new ResponseEntity(new Mensaje("Soft skill eliminado"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Soft skill eliminada"), HttpStatus.OK);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
@@ -62,7 +62,7 @@ public class SoftSkillController {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
         if (sSService.existsByNombreSS(dtoSS.getNombreSS())) {
-            return new ResponseEntity(new Mensaje("Esa experiencia existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Ese skill existe"), HttpStatus.BAD_REQUEST);
         }
 
         SoftSkill softSkill = new SoftSkill(dtoSS.getNombreSS(), dtoSS.getPorcentajeSS());
@@ -74,13 +74,13 @@ public class SoftSkillController {
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoSoftSkill dtoSS) {
-        //Validacion de existencia de ID
+        //Validacion de ID
         if (!sSService.existsById(id)) {
             return new ResponseEntity(new Mensaje("El Id no existe"), HttpStatus.BAD_REQUEST);
         }
-        //Comparacion de nombres de experiencia
+        //Comparacion de nombres
         if (sSService.existsByNombreSS(dtoSS.getNombreSS()) && sSService.getByNombreSS(dtoSS.getNombreSS()).get().getId() != id) {
-            return new ResponseEntity(new Mensaje("Ese soft skill ya existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Ese hard skill ya existe"), HttpStatus.BAD_REQUEST);
         }
         if (StringUtils.isBlank(dtoSS.getNombreSS())) {
             return new ResponseEntity(new Mensaje("el nombre es obligatorio"), HttpStatus.BAD_REQUEST);
@@ -91,6 +91,6 @@ public class SoftSkillController {
         softSkill.setPorcentajeSS(dtoSS.getPorcentajeSS());
 
         sSService.save(softSkill);
-        return new ResponseEntity(new Mensaje("Soft skill actualizado"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Skill actualizada"), HttpStatus.OK);
     }
 }

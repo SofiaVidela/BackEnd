@@ -39,7 +39,7 @@ public class HardSkillService {
         return iHSRepository.existsById(id);
     }
 
-    public boolean existsByNombreEdu(String nombreHS) {
+    public boolean existsByNombreHS(String nombreHS) {
         return iHSRepository.existsByNombreHS(nombreHS);
     }
 }

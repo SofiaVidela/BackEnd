@@ -4,17 +4,17 @@ export class persona{
     apellido: string;
     descripcionDM: string;
     subtitulo: string;
-    descripcionHS: string;
-    descripcionSS: string;
+    descriPcionHS: string;
+    descriPcionSS: string;
     img: string;
 
-    constructor (nombre: string,apellido: string, img: string, descripcionDM: string,subtitulo:string, descripcionHS: string, descripcionSS: string){
+    constructor (nombre: string,apellido: string, img: string, descripcionDM: string,subtitulo:string, descriPcionHS: string, descriPcionSS: string){
         this.nombre = nombre;
         this.apellido = apellido;
         this.img = img;
         this.descripcionDM = descripcionDM;
         this.subtitulo = subtitulo;
-        this.descripcionHS = descripcionHS;
-        this.descripcionSS = descripcionSS;
+        this.descriPcionHS = descriPcionHS;
+        this.descriPcionSS = descriPcionSS;
     }
 }

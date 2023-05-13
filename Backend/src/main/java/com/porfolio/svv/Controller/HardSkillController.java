@@ -61,7 +61,7 @@ public class HardSkillController {
         if (StringUtils.isBlank(dtoHS.getNombreHS())) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
-        if (hSService.existsByNombreEdu(dtoHS.getNombreHS())) {
+        if (hSService.existsByNombreHS(dtoHS.getNombreHS())) {
             return new ResponseEntity(new Mensaje("Ese hard skill existe"), HttpStatus.BAD_REQUEST);
         }
 
@@ -74,12 +74,12 @@ public class HardSkillController {
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoHardSkill dtoHS) {
-        //Validacion de existencia de ID
+        //Validacion de ID
         if (!hSService.existsById(id)) {
             return new ResponseEntity(new Mensaje("El Id no existe"), HttpStatus.BAD_REQUEST);
         }
-        //Comparacion de nombres de experiencia
-        if (hSService.existsByNombreEdu(dtoHS.getNombreHS()) && hSService.getByNombreHS(dtoHS.getNombreHS()).get().getId() != id) {
+        //Comparacion de nombres
+        if (hSService.existsByNombreHS(dtoHS.getNombreHS()) && hSService.getByNombreHS(dtoHS.getNombreHS()).get().getId() != id) {
             return new ResponseEntity(new Mensaje("Ese hard skill ya existe"), HttpStatus.BAD_REQUEST);
         }
         if (StringUtils.isBlank(dtoHS.getNombreHS())) {

@@ -20,8 +20,8 @@ export class HardSkillService {
   public save(hardSkill: HardSkill): Observable<any> {
     return this.httpClient.post<any>(this.URL + '/create', hardSkill);
   }
-  public update(id: number, hardSkill: HardSkill): Observable<any> {
-    return this.httpClient.put<any>(this.URL + `/update/${id}`, hardSkill);
+  public update(id: number,hardSkill: HardSkill): Observable<any> {
+    return this.httpClient.put<any>(this.URL + `/update/${id}`,hardSkill);
   }
   public delete(id: number): Observable<any> {
     return this.httpClient.delete<any>(this.URL + `/delete/${id}`);

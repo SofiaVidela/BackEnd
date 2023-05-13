@@ -93,8 +93,8 @@ public class PersonaController {
         persona.setApellido(dtoPersona.getApellido());
         persona.setDescripcionDM(dtoPersona.getDescripcionDM());
         persona.setSubtitulo(dtoPersona.getSubtitulo());        
-        persona.setDescripcionHS(dtoPersona.getDescripcionHS());
-        persona.setDescripcionSS(dtoPersona.getDescripcionSS());
+        persona.setDescriPcionHS(dtoPersona.getDescriPcionHS());
+        persona.setDescriPcionSS(dtoPersona.getDescriPcionSS());
 
         personaService.save(persona);
         return new ResponseEntity(new Mensaje("Persona actualizada"), HttpStatus.OK);
