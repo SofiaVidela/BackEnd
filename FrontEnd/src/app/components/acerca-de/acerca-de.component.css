@@ -1,11 +1,9 @@
-.row{
-    padding: 20px;
-}
+
 div{
     background-color: #a3af9c;
 }
 /*Nombre*/
-#nombre{
+#nombreCompleto{
     font-weight: bold;
     margin-top: 25px;
 }
@@ -38,3 +36,7 @@ div{
         left: 40%;
     }
 }
+
+.botones{
+    display: flex;
+    justify-content: flex-end;}

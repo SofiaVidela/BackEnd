@@ -1,15 +1,59 @@
 <div class="row">
-<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 " id="contFoto">
-    <img src="../../../assets/fotoPerfil.png" class="img-fluid mx-auto" id="fotoDePerfil">
-</div>
-<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 ">
-    <h1 id="nombre">Sofía Videla Vega</h1>
-    <h3>Full Stack Developer Jr.</h3>
-<div class="row">
-    <div class="col-xs-12 col-sm-11 col-md-11 col-lg-11">
-    <h1>Acerca de Mí</h1>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit qui aut quidem corrupti ducimus, porro, adipisci nihil, non quae consectetur odio id doloribus a voluptas numquam eos cupiditate quaerat error!</p>
-</div>
-</div>
-</div>
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 " id="contFoto">
+        <img src="../../../assets/fotoPerfil.png" class="img-fluid mx-auto" id="fotoDePerfil">
+    </div>
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 ">
+        <h1 id="nombreCompleto">{{Persona.nombre}} {{Persona.apellido}}</h1>
+        <h3>{{Persona.subtitulo}}</h3>
+        <div class="row">
+            <div class="col-xs-12 col-sm-11 col-md-11 col-lg-11">
+                <h1>Acerca de Mí</h1>
+                <p>{{Persona.descripcionDM}}</p>
+            </div>
+        </div>
+    </div>
+    <!--Boton de Edicion-->
+    <div class="row col-11 mx-auto">
+        <button *ngIf="isLogged" class="btn btn-outline-dark m-1 col-12" (click)="editar()" type="button"
+            data-bs-toggle="collapse" data-bs-target="#FormInfoPersonal" aria-expanded="false"
+            aria-controls="FormInfoPersonal">Editar Información Personal
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
+                viewBox="0 0 16 16">
+                <path
+                    d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+            </svg></button>
+    </div>
+        <!--Formularios-->
+    <div class="collapse collapse-horizontal col-11 mx-auto" id="FormInfoPersonal">
+        <div class="row" *ngIf="isLogged">
+            <div class="col-12">
+                <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="Persona.nombre"
+                            value="{{Persona.nombre}}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" class="form-control" id="apellido" name="apellido"
+                            [(ngModel)]="Persona.apellido" value="{{Persona.apellido}}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subtitulo">Subtitulo</label>
+                        <input type="text" class="form-control" id="subtitulo" name="apellido"
+                            [(ngModel)]="Persona.subtitulo" value="{{Persona.subtitulo}}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcionDM">Descripción de Mí</label>
+                        <textarea type="text" class="form-control" id="descripcionDM" name="descripcionDM" rows="3"
+                            [(ngModel)]="Persona.descripcionDM" value="{{Persona.descripcionDM}}" required></textarea>
+                    </div>
+                    <div class="col-auto mx-auto p-3"><button type="submit"
+                            class="btn btn-outline-dark btn-sm">Confirmar
+                            Cambios</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </div>

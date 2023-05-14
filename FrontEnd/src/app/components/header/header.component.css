@@ -1,9 +1,13 @@
 #logoAP{
+    padding-left: 5%;
     width: 100px;
 }
 
 svg{
     color: white;
+}
+button>svg{
+    color: #b47474;
 }
 .sv-tipo2{
     font-family: 'Raleway', sans-serif;
@@ -14,4 +18,10 @@ svg{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.social{
+    padding-right: 5%;
+}
+ul{
+    margin-bottom: 0;
 }
